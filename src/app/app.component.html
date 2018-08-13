@@ -1,9 +1,18 @@
 <div class="container">
 
-    <h1>{{ title }}</h1>
+    <h3>
+        <img [attr.src]="currentLang.imageUri"
+            [attr.title]="currentLang.name"
+            [attr.alt]="currentLang.name" />
+        <span (click)="changeLang(currentLang.code === 'RU' ? 'EN' : 'RU')" style="cursor:pointer;">
+            {{ currentLang.name }}
+        </span>
+    </h3>
+
+    <h1>{{ 'APP_TITLE' | translate }}</h1>
 
     <img src="../../assets/images/vjuh.png" alt="котовжух" height="300px" width="300px" />
 
-    <p>Vjuh! And something appears here!</p>
+    <p>{{ 'APP_TEXT' | translate }}</p>
 
 </div>
