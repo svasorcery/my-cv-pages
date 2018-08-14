@@ -5,10 +5,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { StorageService } from './storage.service';
-import { LanguageService } from './language.service';
+import { StorageService } from './services/storage.service';
+import { LanguageService } from './services/language.service';
 
 import { AppComponent } from './app.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { HomeComponent } from './home/home.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -28,7 +30,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        NavMenuComponent,
+        HomeComponent
     ],
     providers: [
         StorageService,

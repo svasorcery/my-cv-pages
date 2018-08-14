@@ -1,0 +1,8 @@
+<div class="nav-menu">
+    <img [attr.src]="currentLang.imageUri"
+        [attr.title]="currentLang.name"
+        [attr.alt]="currentLang.name" />
+    <span (click)="changeLang(currentLang.code === 'RU' ? 'EN' : 'RU')" style="cursor:pointer;">
+        {{ currentLang.name }}
+    </span>
+</div>
