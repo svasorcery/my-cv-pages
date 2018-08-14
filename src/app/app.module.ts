@@ -9,8 +9,7 @@ import { StorageService } from './services/storage.service';
 import { LanguageService } from './services/language.service';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
+import { AppRoutingModule, components } from './app.routing';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -28,11 +27,10 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
+        AppRoutingModule
     ],
     declarations: [
-        AppComponent,
-        NavMenuComponent,
-        HomeComponent
+        ...components
     ],
     providers: [
         StorageService,
