@@ -11,6 +11,8 @@ import { LanguageService } from './services/language.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, components } from './app.routing';
 
+import { TimelineModule } from './timeline/timeline.module';
+
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
@@ -27,6 +29,7 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
+        TimelineModule,
         AppRoutingModule
     ],
     declarations: [
