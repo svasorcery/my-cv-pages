@@ -5,8 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { StorageService } from './services/storage.service';
-import { LanguageService } from './services/language.service';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, components } from './app.routing';
@@ -29,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
+        SharedModule,
         TimelineModule,
         AppRoutingModule
     ],
@@ -36,8 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ...components
     ],
     providers: [
-        StorageService,
-        LanguageService
+
     ],
     bootstrap: [AppComponent]
 })

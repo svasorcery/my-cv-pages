@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { TimelineComponent } from './timeline.component';
 import { TimelineGroupComponent } from './group.component';
 
 @NgModule({
     imports: [
-        CommonModule
+        SharedModule
     ],
     declarations: [
         TimelineComponent,

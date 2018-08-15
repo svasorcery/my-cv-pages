@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { LanguageService, Language } from '../services/language.service';
+import { LanguageService, Language } from '../shared/services/language.service';
 
 @Component({
     selector: 'nav-menu',
