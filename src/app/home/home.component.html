@@ -8,4 +8,12 @@
 
     <timeline></timeline>
 
+    <rating-bar
+        [ratingTotal]="rating"
+        [count]="5"
+        (rate)="rate($event)">
+    </rating-bar>
+
+    {{ rating }}
+
 </div>
