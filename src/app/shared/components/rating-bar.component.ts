@@ -11,22 +11,20 @@ export enum RatingRate {
 @Component({
     selector: 'rating-bar',
     template: `
-        <div *ngIf="readonly">
+        <div class="rating-bar">
             <rating-star *ngFor="let star of stars"
                 [factor]="star"
                 [ratingTotal]="ratingTotal"
-                style="color:goldenrod;">
+                (click)="rate($event)">
             </rating-star>
         </div>
-        <div *ngIf="!readonly">
-            <rating-star *ngFor="let star of stars"
-                [factor]="star"
-                [ratingTotal]="ratingTotal"
-                (click)="rate($event)"
-                style="color:grey; cursor:pointer">
-            </rating-star>
-        </div>
-    `
+    `,
+    styles: [`
+        .rating-bar {
+            color: goldenrod;
+            margin: 10px;
+        }
+    `]
 })
 
 export class RatingBarComponent implements OnInit {
@@ -42,14 +40,13 @@ export class RatingBarComponent implements OnInit {
     }
 
     ngOnInit() {
-        for (var star = 1; star <= this.count; star++) {
+        for (let star = 1; star <= this.count; star++) {
             this.stars.push(star);
         }
     }
 
     rate(rating: RatingRate) {
-        if (!rating) return;
-
+        if (!rating) { return; }
         this.onRate.emit(rating);
     }
 }
@@ -59,12 +56,18 @@ export class RatingBarComponent implements OnInit {
     selector: 'rating-star',
     template: `
         <i (click)="click()"
-            class="fa"
+            class="star fa"
             [class.fa-circle-o]="fill==='none'"
             [class.fa-circle-half-o]="fill==='half'"
             [class.fa-circle]="fill==='full'">
         </i>
-    `
+    `,
+    styles: [`
+        .star {
+            cursor: pointer;
+            margin: 1px;
+        }
+    `]
 })
 export class RatingStarComponent implements OnChanges {
     @Input() factor: number;
@@ -84,7 +87,7 @@ export class RatingStarComponent implements OnChanges {
     }
 
     click() {
-        if (!this.factor) return;
+        if (!this.factor) { return; }
         this.onClick.emit(this.factor);
     }
 }

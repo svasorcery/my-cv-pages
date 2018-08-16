@@ -1,14 +1,14 @@
-<h2>{{ title }}</h2>
-
-<div *ngFor="let p of positions">
-    <div>
-        {{ p.startedAt | date:'dd.MM.yyyy' }} -
-        <span *ngIf="p.finishedAt">{{ p.finishedAt | date:'dd.MM.yyyy' }}</span>
-        <span *ngIf="!p.finishedAt">present</span>
+<group-card [title]="title" icon="briefcase">
+    <div *ngFor="let p of positions">
+        <div>
+            {{ p.startedAt | date:'dd.MM.yyyy' }} -
+            <span *ngIf="p.finishedAt">{{ p.finishedAt | date:'dd.MM.yyyy' }}</span>
+            <span *ngIf="!p.finishedAt">present</span>
+        </div>
+        <div>{{ p.name }}</div>
+        <div>{{ p.where }}</div>
+        <div *ngFor="let exp of p.experiences">
+            {{ exp }}
+        </div>
     </div>
-    <div>{{ p.name }}</div>
-    <div>{{ p.where }}</div>
-    <div *ngFor="let exp of p.experiences">
-        {{ exp }}
-    </div>
-</div>
+</group-card>
