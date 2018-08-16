@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container center">
 
     <h1>{{ 'APP_TITLE' | translate }}</h1>
 
@@ -6,14 +6,18 @@
 
     <p>{{ 'APP_TEXT' | translate }}</p>
 
+</div>
+
+<div class="container">
     <timeline></timeline>
 
-    <rating-bar
-        [ratingTotal]="rating"
-        [count]="5"
-        (rate)="rate($event)">
-    </rating-bar>
-
-    {{ rating }}
-
+    <group-card title="Skills" icon="puzzle-piece">
+        <div *ngFor="let skill of skills">
+            <rating-bar
+                [ratingTotal]="skill.rating"
+                count="5">
+            </rating-bar>
+            {{ skill.name }}
+        </div>
+    </group-card>
 </div>

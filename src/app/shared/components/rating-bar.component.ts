@@ -21,8 +21,9 @@ export enum RatingRate {
     `,
     styles: [`
         .rating-bar {
-            color: goldenrod;
-            margin: 10px;
+            display: inline;
+            color: grey;
+            margin: 10px 0;
         }
     `]
 })

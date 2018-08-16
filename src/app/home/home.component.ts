@@ -6,10 +6,12 @@ import { Component } from '@angular/core';
     styleUrls: [ './home.component.css' ]
 })
 export class HomeComponent {
-    rating: number = 3;
-
-    public rate(rating: number) {
-        if (typeof(rating) !== 'number') { return; }
-        this.rating = rating;
-    }
+    skills = [
+        { name: '.NET Core', rating: 4 },
+        { name: 'ASP.NET MVC', rating: 4 },
+        { name: 'Angular 2-6', rating: 5 },
+        { name: 'T-SQL', rating: 3 },
+        { name: 'MongoDB', rating: 3 },
+        { name: 'Docker', rating: 2 },
+    ];
 }
