@@ -5,6 +5,7 @@ import { StorageService } from './services/storage.service';
 import { LanguageService } from './services/language.service';
 
 import { RatingStarComponent, RatingBarComponent } from './components/rating-bar.component';
+import { GroupCardComponent } from './components/group-card.component';
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { RatingStarComponent, RatingBarComponent } from './components/rating-bar
     ],
     declarations: [
         RatingStarComponent,
-        RatingBarComponent
+        RatingBarComponent,
+        GroupCardComponent
     ],
     providers: [
         StorageService,
@@ -20,7 +22,8 @@ import { RatingStarComponent, RatingBarComponent } from './components/rating-bar
     ],
     exports: [
         CommonModule,
-        RatingBarComponent
+        RatingBarComponent,
+        GroupCardComponent
     ]
 })
 export class SharedModule { }
