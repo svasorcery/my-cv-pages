@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { PersonalCardComponent } from './personal/personal.component';
 
 
 const routes: Routes = [
@@ -37,5 +38,6 @@ export class AppRoutingModule {
 export const components = [
     AppComponent,
     HomeComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    PersonalCardComponent
 ];

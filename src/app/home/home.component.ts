@@ -8,6 +8,17 @@ import { Person } from '../app.models';
     styleUrls: [ './home.component.css' ]
 })
 export class HomeComponent {
+    personal = {
+        firstName: 'Vladimir',
+        lastName: 'Sinyavsky',
+        birthDate: new Date(1989, 8, 15),
+        gender: 'Male',
+        location: 'Russian Federation, Dubna',
+        phone: '+7(9**)***-**-**',
+        email: 'sva.sorcery@gmail.com',
+        photoUrl: 'https://avatars2.githubusercontent.com/u/20383833?s=460&v=4'
+    } as Person;
+
     experience = {
         title: 'Experience',
         items: [

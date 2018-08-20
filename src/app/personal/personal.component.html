@@ -1,0 +1,18 @@
+<group-card [title]="title" icon="user-tie">
+    <div>
+        <img [attr.src]="value.photoUrl" class="avatar" />
+        <span class="name">{{ value.firstName }} {{ value.lastName }}</span>
+    </div>
+    <div>
+        <i class="fa fa-map-marker"></i> 
+        {{ value.location }}
+    </div>
+    <div>
+        <i class="fa fa-phone"></i> 
+        <a [href]="'tel:' + value.phone">{{ value.phone }}</a>
+    </div>
+    <div>
+        <i class="fa fa-envelope"></i> 
+        <a [href]="'mailto:' + value.email">{{ value.email }}</a>
+    </div>
+</group-card>
